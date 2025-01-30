@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Nafia</title>
+    <title>Nafi'atunnisa' Portofolio</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -11,6 +11,7 @@
             padding: 0;
             text-align: center;
             background-color: #f4f4f4;
+            transition: background 0.3s, color 0.3s;
         }
         header {
             background: linear-gradient(90deg, #ff7eb3, #ff758c);
@@ -30,6 +31,15 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .card:hover {
             transform: translateY(-5px);
@@ -47,28 +57,59 @@
         .btn:hover {
             background: #ff5277;
         }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode .card {
+            background: #333;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Mode Gelap</button>
     <header>
-        <h1>Portofolio Nafia</h1>
+        <h1>Nafi'atunnisa' Portofolio</h1>
     </header>
     <section>
         <div class="card">
-            <h2>Tentang Saya</h2>
-            <p>Saya seorang mahasiswi yang menyukai dunia teknologi dan literasi. Selalu ingin belajar hal baru dan berbagi inspirasi.</p>
+            <h2>About Me</h2>
+            <p>Halo, kenalin aku Nafi'atunnisa' mahasiswi Psikologi yang suka upgrade skill dan suka banget sama ilmu kesehatan mental. Ya iya lah suka ilmu kesehatan mental orang emang kuliahnya di jurusan itu. Well aku juga suka banget nulis, mulai dari cerpen, caption ig, copywriting, sampai novel. Karena suka eksplore pengetahuan aku juga mulai suka sama dunia coding, nggak nyambung ya? tapi seru aja si belajar hal baru. Walaupun saat ini baru bisa HTML, CSS, sama Javascript dasar</p>
+        </div>
+        <div class="card">
+            <h2>Keahlian</h2>
+            <p>✅ Menulis Artikel SEO berbagai topik</p>
+            <p>✅ Copywriting caption Instagram</p>
+            <p>✅ Copywriting iklan</p>
         </div>
         <div class="card">
             <h2>Proyek</h2>
-            <p>1. Website Portofolio - Menampilkan karya dan pengalaman saya.</p>
-            <p>2. Blog Pribadi - Berisi tulisan seputar teknologi, literasi, dan perjalanan hidup.</p>
-            <a href="#" class="btn">Lihat Proyek</a>
+            <p>1. Website Pribadi - https://peduliemosi.blogspot.com/.</p>
+            <p>2. Portofolio Tulisan - https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/</p>
+            <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/" class="btn">Lihat Proyek</a>
         </div>
         <div class="card">
             <h2>Kontak</h2>
-            <p>Email: nafia@example.com</p>
-            <a href="mailto:nafia@example.com" class="btn">Hubungi Saya</a>
+            <p>Email: nafiamisra@gmail.com</p>
+            <a href="https://wa.link/v0hbok" class="btn">Hubungi Saya</a>
         </div>
     </section>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
