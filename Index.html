@@ -79,6 +79,9 @@
             border-radius: 10px;
             margin-top: 20px;
             object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .button {
             display: inline-block;
@@ -115,6 +118,13 @@
             font-weight: 400;
         }
         /* Portfolio */
+        #portfolio h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #6A3FA0;
+            margin-bottom: 40px;
+        }
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -126,13 +136,54 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
         .portfolio-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         .portfolio-item h3 {
+            font-size: 2em;
+            text-align: center;
             color: #6A3FA0;
-            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .portfolio-item p {
+            font-size: 1.2em;
+            text-align: center;
+            color: #333;
+            line-height: 1.5;
+        }
+        .portfolio-item a {
+            text-decoration: none;
+            color: #6A3FA0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .portfolio-item a:hover {
+            color: #502A80;
+        }
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+            border: 2px solid #6A3FA0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        #contact h2 {
+            font-size: 2.5em;
+            color: #6A3FA0;
+            font-weight: bold;
+        }
+        #contact p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
         }
         /* Footer */
         footer {
@@ -161,11 +212,39 @@
                 gap: 20px;
             }
         }
-        /* Centering the Button */
-        #about .button {
-            display: block;
-            margin: 20px auto;
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+            #about h2 {
+                font-size: 2em;
+            }
+            #about p {
+                font-size: 1.1em;
+            }
+            #portfolio h2 {
+                font-size: 2.2em;
+            }
+            .portfolio-item h3 {
+                font-size: 1.8em;
+            }
+            .portfolio-item p {
+                font-size: 1em;
+            }
         }
+
     </style>
 </head>
 <body>
@@ -175,14 +254,16 @@
     </header>
     <nav>
         <a href="#about">About</a>
-        <a href="#portofolio">Portfolio</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
         <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Saya juga memiliki latar belakang Psikologi yang membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
         <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg" alt="White ceramic teacup with saucer near two books" />
-        <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
+        <div class="button-container">
+            <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
+        </div>
     </section>
 
     <section id="portfolio">
@@ -198,7 +279,7 @@
             </div>
             <div class="portfolio-item">
                 <h3>Artikel SEO - HarianeJogja</h3>
-                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Harian Jogja</a></p>
+                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Hariane Jogja</a></p>
             </div>
         </div>
     </section>
