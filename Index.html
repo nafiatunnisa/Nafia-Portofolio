@@ -1,142 +1,223 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Nafi'atunnisa'</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.example.com/path/to/icon.png" type="image/png">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
         }
+        /* Header */
         header {
-            background-color: #4fa3f7;
-            padding: 20px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #6A3FA0, #F1E6FF);
             color: white;
+            text-align: center;
+            padding: 120px 20px;
         }
         header h1 {
-            margin: 0;
-            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
         }
+        header p {
+            font-size: 1.3em;
+        }
+        /* Navigasi */
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
-            padding: 10px 0;
+            gap: 20px;
+            background-color: #6A3FA0;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
         }
         nav a:hover {
-            border-bottom: 2px solid white;
+            background-color: #F1E6FF;
+            color: #6A3FA0;
         }
-        section {
+        /* About Me */
+        #about {
             padding: 60px 20px;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .card h2 {
-            margin-top: 0;
-        }
-        .card ul {
-            padding-left: 20px;
-        }
-        .card ul li {
-            list-style-type: square;
-        }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .contact-info a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #4fa3f7;
-            font-size: 24px;
-        }
-        .contact-info a:hover {
+            background-color: #fff;
             color: #333;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
             text-align: center;
         }
-        footer p {
-            margin: 0;
+        #about h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #6A3FA0;
+        }
+        #about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 300;
+        }
+        #about img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+            object-fit: cover;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+        /* Copywriting section */
+        #copywriting {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        #copywriting h3 {
+            font-size: 2.2em;
+            color: #6A3FA0;
+        }
+        #copywriting p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 400;
+        }
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+        }
+        .portfolio-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        .portfolio-item h3 {
+            color: #6A3FA0;
+            font-size: 1.8em;
+        }
+        /* Footer */
+        footer {
+            background-color: #6A3FA0;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            #about p {
+                font-size: 1.1em;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        /* Centering the Button */
+        #about .button {
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
-        <h1>Nafi'atunnisa' Portofolio</h1>
+        <h1>Nafi'atunnisa' Personal Space</h1>
+        <p>Welcome to my portfolio! Explore my projects and get in touch.</p>
     </header>
-
-    <!-- Navbar -->
     <nav>
-        <a href="#about">Tentang Saya</a>
-        <a href="#skills">Keahlian</a>
-        <a href="#projects">Proyek</a>
-        <a href="#contact">Kontak</a>
+        <a href="#about">About</a>
+        <a href="#portofolio">Portfolio</a>
+        <a href="#contact">Contact</a>
     </nav>
-
-    <!-- About Section -->
     <section id="about">
-        <div class="card">
-            <h2>Tentang Saya</h2>
-            <p>Halo! Saya Nafi'atunnisa', seorang mahasiswi Psikologi yang memiliki minat besar dalam ilmu kesehatan mental. Saya juga menyukai dunia menulis dan coding. Saya memiliki keterampilan dalam menulis artikel SEO, copywriting, dan penulisan kreatif. Selain itu, saya mulai belajar HTML, CSS, dan JavaScript untuk memperluas pengetahuan saya dalam dunia digital.</p>
-        </div>
+        <h2>About Me</h2>
+        <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Saya juga memiliki latar belakang Psikologi yang membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
+        <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg" alt="White ceramic teacup with saucer near two books" />
+        <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="card">
-            <h2>Keahlian</h2>
-            <ul>
-                <li>Menulis Artikel SEO</li>
-                <li>Copywriting untuk media sosial</li>
-                <li>Penulisan kreatif (cerpen, caption, dll)</li>
-                <li>Dasar-dasar HTML, CSS, dan JavaScript</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="card">
-            <h2>Proyek</h2>
-            <p>Berikut adalah beberapa proyek yang telah saya kerjakan:</p>
-            <ul>
-                <li><a href="https://peduliemosi.blogspot.com/">Website Pribadi</a></li>
-                <li><a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Portofolio Tulisan</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="card">
-            <h2>Kontak</h2>
-            <p>Email: nafiamisra@gmail.com</p>
-            <div class="contact-info">
-                <a href="https://wa.link/v0hbok" target="_blank">WhatsApp</a>
-                <a href="mailto:nafiamisra@gmail.com" target="_blank">Email</a>
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Jurnalis di Masagipedia</h3>
+                <p>Menulis artikel Islami dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Blog Tema Psikologi</h3>
+                <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Artikel SEO - HarianeJogja</h3>
+                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Harian Jogja</a></p>
             </div>
         </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: nafiamisra@gmail.com</p>
+        <p>No HP: +6285701776975</p>
+    </section>
+
+    <!-- Copywriting Section (Collaborate) -->
+    <section id="copywriting">
+        <h3>Collaborate with me</h3>
+        <p>Ingin menciptakan konten berkualitas dan menarik? Yuk, kita kerja sama dan wujudkan ide-ide hebat yang dapat menginspirasi banyak orang. Saya siap membantu mewujudkan proyek kreatif Anda!</p>
+        <a href="https://wa.link/v0hbok" class="button">Collaborate with Me</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nafi'atunnisa'. All rights reserved.</p>
+    </footer>
+</body>
+</html>
