@@ -18,17 +18,43 @@
         }
         /* Header */
         header {
+            position: relative;
             background: linear-gradient(135deg, #6A3FA0, #F1E6FF);
             color: white;
             text-align: center;
             padding: 120px 20px;
+            overflow: hidden;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
         header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4em;
+            transition: transform 0.5s ease;
         }
         header p {
             font-size: 1.3em;
+            transition: opacity 0.5s ease;
+        }
+        header:hover h1 {
+            transform: translateY(-20px);
+        }
+        header:hover p {
+            opacity: 0.8;
+        }
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1506784363803-82de5f4b599d'); /* Ganti dengan gambar sesuai pilihan */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
         }
         /* Navigasi */
         nav {
@@ -118,18 +144,21 @@
             font-weight: 400;
         }
         /* Portfolio */
+        #portfolio {
+            padding: 60px 20px;
+            text-align: center;
+        }
         #portfolio h2 {
             font-size: 2.5em;
-            text-align: center;
             color: #6A3FA0;
             margin-bottom: 40px;
         }
-
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 30px;
-            padding: 40px 20px;
+            flex-wrap: wrap;
+            text-align: center;
         }
         .portfolio-item {
             background-color: white;
@@ -137,6 +166,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px;
             text-align: center;
         }
         .portfolio-item:hover {
@@ -249,17 +281,20 @@
 </head>
 <body>
     <header>
-        <h1>Nafi'atunnisa' Personal Space</h1>
-        <p>Welcome to my portfolio! Explore my projects and get in touch.</p>
+        <div class="header-content">
+            <h1>Nafi'atunnisa' Personal Space</h1>
+            <p>Welcome to my portfolio! Explore my projects and get in touch.</p>
+        </div>
+        <div class="header-overlay"></div>
     </header>
     <nav>
         <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portofolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Saya juga memiliki latar belakang Psikologi yang membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
+        <p> Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Punya latar belakang Psikologi membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
         <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg" alt="White ceramic teacup with saucer near two books" />
         <div class="button-container">
             <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
@@ -267,18 +302,18 @@
     </section>
 
     <section id="portfolio">
-        <h2>My Portfolio</h2>
+        <h2>My Portofolio</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
+            <div class="portofolio-item">
                 <h3>Jurnalis di Masagipedia</h3>
-                <p>Menulis artikel Islami dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
+                <p>Menulis artikel Berita dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
             </div>
-            <div class="portfolio-item">
+            <div class="portofolio-item">
                 <h3>Blog Tema Psikologi</h3>
                 <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
             </div>
-            <div class="portfolio-item">
-                <h3>Artikel SEO - HarianeJogja</h3>
+            <div class="portofolio-item">
+                <h3>Artikel SEO - Hariane Jogja</h3>
                 <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Hariane Jogja</a></p>
             </div>
         </div>
@@ -293,7 +328,7 @@
     <!-- Copywriting Section (Collaborate) -->
     <section id="copywriting">
         <h3>Collaborate with me</h3>
-        <p>Ingin menciptakan konten berkualitas dan menarik? Yuk, kita kerja sama dan wujudkan ide-ide hebat yang dapat menginspirasi banyak orang. Saya siap membantu mewujudkan proyek kreatif Anda!</p>
+        <p>Ingin menciptakan konten berkualitas dan menarik? Yuk, kita kerja sama dan wujudkan ide-ide hebat yang dapat menginspirasi banyak orang.</p>
         <a href="https://wa.link/v0hbok" class="button">Collaborate with Me</a>
     </section>
 
