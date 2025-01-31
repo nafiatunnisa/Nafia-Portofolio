@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.example.com/path/to/icon.png" type="image/png">
     <style>
-        /* Style definitions remain the same */
         html {
             scroll-behavior: smooth;
         }
@@ -126,24 +125,6 @@
             background-color: #502A80;
             transform: translateY(-2px);
         }
-        /* Copywriting section */
-        #copywriting {
-            background-color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        #copywriting h3 {
-            font-size: 2.2em;
-            color: #6A3FA0;
-        }
-        #copywriting p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.6;
-            color: #333;
-            font-weight: 400;
-        }
         /* Portfolio */
         #portfolio {
             display: flex;
@@ -200,31 +181,98 @@
         }
         /* Contact Section */
         #contact {
-            padding: 60px 20px;
+            padding: 80px 20px;
             background-color: #fff;
             text-align: center;
             border: 2px solid #6A3FA0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin: 40px auto;
+            margin: 60px auto;
             max-width: 600px;
         }
         #contact h2 {
             font-size: 2.5em;
             color: #6A3FA0;
             font-weight: bold;
+            margin-bottom: 20px;
         }
         #contact p {
             font-size: 1.2em;
             color: #333;
             line-height: 1.6;
+            margin-bottom: 30px;
         }
-        /* Footer */
+        #contact a {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #contact a:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+
+        /* Copywriting Section */
+        #copywriting {
+            padding: 80px 20px;
+            background-color: #F1E6FF;
+            text-align: center;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        #copywriting h2 {
+            font-size: 2.5em;
+            color: #6A3FA0;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        #copywriting p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .button-copywriting {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button-copywriting:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styling */
         footer {
             background-color: #6A3FA0;
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
+        }
+        .footer-content p {
+            font-size: 1.2em;
+            color: white;
+            margin: 0;
         }
         /* Responsiveness */
         @media (max-width: 768px) {
@@ -244,6 +292,22 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+            #contact {
+                margin: 40px 20px;
+                padding: 60px 20px;
+            }
+            #contact h2 {
+                font-size: 2em;
+            }
+            #contact p {
+                font-size: 1em;
+            }
+            #copywriting h2 {
+                font-size: 2em;
+            }
+            #copywriting p {
+                font-size: 1.1em;
             }
         }
 
@@ -277,6 +341,10 @@
             .portfolio-item p {
                 font-size: 1em;
             }
+            #copywriting {
+                padding: 60px 20px;
+                margin-top: 30px;
+            }
         }
 
     </style>
@@ -291,52 +359,57 @@
     </header>
     <nav>
         <a href="#about">About</a>
-        <a href="#portofolio">Portfolio</a>
+        <a href="#portofolio">Portofolio</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p> Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Punya latar belakang Psikologi membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
+        <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Punya latar belakang Psikologi membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
         <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg" alt="White ceramic teacup with saucer near two books" />
         <div class="button-container">
             <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
         </div>
     </section>
 
-    <section id="copywriting">
-        <h3>Copywriting & Content Creation</h3>
-        <p> Menulis bukan hanya tentang mengisi halaman dengan kata-kata, tetapi juga menyampaikan pesan yang kuat. Dari SEO hingga cerita kreatif, saya membantu bisnis dan individu mencapai audiens mereka melalui tulisan yang efektif dan menarik.</p>
-    </section>
-
-    <section id="portofolio">
+    <!-- Portofolio section -->
+    <section id="portfolio">
         <h2>My Portofolio</h2>
-        <div class="portfolio-grid">
-            <div class="portofolio-item">
-                <img src="https://via.placeholder.com/300x200?text=Masagipedia" alt="Masagipedia">
+        <div class="portofolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1602926930607-6c19160d75d9" alt="Masagipedia" />
                 <h3>Jurnalis di Masagipedia</h3>
                 <p>Menulis artikel Berita dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
             </div>
-            <div class="portofolio-item">
-                <img src="https://via.placeholder.com/300x200?text=Peduli+Emosi" alt="Peduli Emosi">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1555473104-39d94e6e5bc6" alt="Peduli Emosi Blog" />
                 <h3>Blog Tema Psikologi</h3>
                 <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
             </div>
             <div class="portofolio-item">
-                <img src="https://via.placeholder.com/300x200?text=Hariane+Jogja" alt="Hariane Jogja">
+                <img src="https://images.unsplash.com/photo-1590401154265-2c44d9c24c1b" alt="Hariane Jogja" />
                 <h3>Artikel SEO - Hariane Jogja</h3>
-                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-coc">Hariane Jogja</a></p>
+                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Artikel Hariane</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Copywriting Section -->
+    <section id="copywriting">
+        <h2>Copywriting Services</h2>
+        <p>Saya menawarkan jasa penulisan konten berkualitas, baik itu untuk kebutuhan SEO, artikel blog, hingga penulisan materi pemasaran. Dengan pengalaman dan keterampilan yang saya miliki, saya siap membantu bisnis Anda berkembang melalui tulisan yang menarik dan efektif.</p>
+        <a href="https://wa.link/v0hbok" class="button-copywriting">Get My Services</a>
+    </section>
+
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Ingin berkolaborasi atau membutuhkan tulisan berkualitas? Jangan ragu untuk Contact  saya.</p>
-        <a href="https://wa.link/v0hbok" class="button">Call Me</a>
+        <h2>Contact Me</h2>
+        <p>If you are interested to collaborate or need more information about my services, feel free to reach out to me!</p>
+        <a href="https://wa.link/v0hbok">Connect on WhatsApp</a>
     </section>
 
     <footer>
-        <p>© 2025 Nafi'atunnisa'. All Rights Reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Nafi'atunnisa' - All Rights Reserved</p>
+        </div>
     </footer>
 </body>
 </html>
