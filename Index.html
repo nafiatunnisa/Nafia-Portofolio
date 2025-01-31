@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.example.com/path/to/icon.png" type="image/png">
     <style>
+        /* Style definitions remain the same */
         html {
             scroll-behavior: smooth;
         }
@@ -145,8 +146,13 @@
         }
         /* Portfolio */
         #portfolio {
-            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             text-align: center;
+            width: 100%;
+            padding: 60px 20px;
         }
         #portfolio h2 {
             font-size: 2.5em;
@@ -154,22 +160,20 @@
             margin-bottom: 40px;
         }
         .portfolio-grid {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            flex-wrap: wrap;
-            text-align: center;
+            justify-items: center;
+            width: 100%;
+            max-width: 1200px;
         }
         .portfolio-item {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%;
-            max-width: 300px;
-            margin: 20px;
             text-align: center;
+            transition: transform 0.3s ease;
         }
         .portfolio-item:hover {
             transform: translateY(-5px);
@@ -177,13 +181,11 @@
         }
         .portfolio-item h3 {
             font-size: 2em;
-            text-align: center;
             color: #6A3FA0;
             font-weight: bold;
         }
         .portfolio-item p {
             font-size: 1.2em;
-            text-align: center;
             color: #333;
             line-height: 1.5;
         }
@@ -301,39 +303,40 @@
         </div>
     </section>
 
-    <section id="portfolio">
+    <section id="copywriting">
+        <h3>Copywriting & Content Creation</h3>
+        <p> Menulis bukan hanya tentang mengisi halaman dengan kata-kata, tetapi juga menyampaikan pesan yang kuat. Dari SEO hingga cerita kreatif, saya membantu bisnis dan individu mencapai audiens mereka melalui tulisan yang efektif dan menarik.</p>
+    </section>
+
+    <section id="portofolio">
         <h2>My Portofolio</h2>
         <div class="portfolio-grid">
             <div class="portofolio-item">
+                <img src="https://via.placeholder.com/300x200?text=Masagipedia" alt="Masagipedia">
                 <h3>Jurnalis di Masagipedia</h3>
                 <p>Menulis artikel Berita dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
             </div>
             <div class="portofolio-item">
+                <img src="https://via.placeholder.com/300x200?text=Peduli+Emosi" alt="Peduli Emosi">
                 <h3>Blog Tema Psikologi</h3>
                 <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
             </div>
             <div class="portofolio-item">
+                <img src="https://via.placeholder.com/300x200?text=Hariane+Jogja" alt="Hariane Jogja">
                 <h3>Artikel SEO - Hariane Jogja</h3>
-                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Hariane Jogja</a></p>
+                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-coc">Hariane Jogja</a></p>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: nafiamisra@gmail.com</p>
-        <p>No HP: +6285701776975</p>
-    </section>
-
-    <!-- Copywriting Section (Collaborate) -->
-    <section id="copywriting">
-        <h3>Collaborate with me</h3>
-        <p>Ingin menciptakan konten berkualitas dan menarik? Yuk, kita kerja sama dan wujudkan ide-ide hebat yang dapat menginspirasi banyak orang.</p>
-        <a href="https://wa.link/v0hbok" class="button">Collaborate with Me</a>
+        <h2>Contact</h2>
+        <p>Ingin berkolaborasi atau membutuhkan tulisan berkualitas? Jangan ragu untuk Contact  saya.</p>
+        <a href="https://wa.link/v0hbok" class="button">Call Me</a>
     </section>
 
     <footer>
-        <p>&copy; 2025 Nafi'atunnisa'. All rights reserved.</p>
+        <p>© 2025 Nafi'atunnisa'. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
