@@ -19,30 +19,15 @@
         /* Header */
         header {
             position: relative;
-            background: linear-gradient(135deg, #6A3FA0, #F1E6FF);
-            color: white;
+            height: 100vh;
+            background-image: url('https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg'); /* Gambar buku dan kopi */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 120px 20px;
-            overflow: hidden;
-        }
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4em;
-            transition: transform 0.5s ease;
-        }
-        header p {
-            font-size: 1.3em;
-            transition: opacity 0.5s ease;
-        }
-        header:hover h1 {
-            transform: translateY(-20px);
-        }
-        header:hover p {
-            opacity: 0.8;
+            color: white;
         }
         .header-overlay {
             position: absolute;
@@ -50,46 +35,75 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1506784363803-82de5f4b599d'); /* Ganti dengan gambar sesuai pilihan */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
+            background-color: rgba(106, 63, 160, 0.7); /* Overlay ungu */
             z-index: 1;
+        }
+        .header-content {
+            z-index: 2;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin: 0;
+            transition: transform 0.5s ease;
+        }
+        header p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            transition: opacity 0.5s ease;
+        }
+        .header-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #F1E6FF;
+            color: #6A3FA0;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .header-button:hover {
+            background-color: #D6C2E6;
+            transform: translateY(-2px);
         }
         /* Navigasi */
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
-            background-color: #6A3FA0;
+            background-color: rgba(106, 63, 160, 0.9); /* Warna dengan transparansi */
             padding: 15px;
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(5px); /* Efek blur */
         }
         nav a {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             padding: 10px 20px;
             border-radius: 25px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
             background-color: #F1E6FF;
             color: #6A3FA0;
         }
-        /* About Me */
-        #about {
-            padding: 60px 20px;
-            background-color: #fff;
-            color: #333;
+        /* Section Umum */
+        section {
+            padding: 80px 20px;
             text-align: center;
         }
-        #about h2 {
+        section h2 {
             font-size: 2.5em;
             font-weight: bold;
             color: #6A3FA0;
+            margin-bottom: 40px;
+        }
+        /* About Me */
+        #about {
+            background-color: #fff;
         }
         #about p {
             font-size: 1.2em;
@@ -102,43 +116,22 @@
         #about img {
             width: 100%;
             max-width: 400px;
+            height: auto;
             border-radius: 10px;
             margin-top: 20px;
             object-fit: cover;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 14px 28px;
-            background-color: #6A3FA0;
-            color: white;
-            font-size: 1.1em;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-align: center;
-        }
-        .button:hover {
-            background-color: #502A80;
-            transform: translateY(-2px);
+        #about img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         /* Portfolio */
         #portfolio {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            width: 100%;
-            padding: 60px 20px;
-        }
-        #portfolio h2 {
-            font-size: 2.5em;
-            color: #6A3FA0;
-            margin-bottom: 40px;
+            background-color: #F1E6FF;
         }
         .portfolio-grid {
             display: grid;
@@ -147,6 +140,7 @@
             justify-items: center;
             width: 100%;
             max-width: 1200px;
+            margin: auto;
         }
         .portfolio-item {
             background-color: white;
@@ -160,10 +154,21 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item img:hover {
+            transform: scale(1.05);
+        }
         .portfolio-item h3 {
             font-size: 2em;
             color: #6A3FA0;
             font-weight: bold;
+            margin: 15px 0;
         }
         .portfolio-item p {
             font-size: 1.2em;
@@ -179,73 +184,59 @@
         .portfolio-item a:hover {
             color: #502A80;
         }
-        /* Contact Section */
-        #contact {
-            padding: 80px 20px;
-            background-color: #fff;
-            text-align: center;
-            border: 2px solid #6A3FA0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin: 60px auto;
-            max-width: 600px;
-        }
-        #contact h2 {
-            font-size: 2.5em;
-            color: #6A3FA0;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        #contact p {
-            font-size: 1.2em;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        #contact a {
-            display: inline-block;
-            padding: 14px 28px;
+        /* Copywriting Section */
+        #copywriting {
             background-color: #6A3FA0;
             color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 60px 20px;
+        }
+        #copywriting h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #copywriting p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: white;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        .button-copywriting {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: white;
+            color: #6A3FA0;
             font-size: 1.1em;
             text-decoration: none;
             border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
-        #contact a:hover {
-            background-color: #502A80;
-            transform: translateY(-2px);
-        }
-
-        /* Copywriting Section */
-        #copywriting {
-            padding: 80px 20px;
+        .button-copywriting:hover {
             background-color: #F1E6FF;
-            text-align: center;
-            color: #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-            max-width: 900px;
-            margin: 40px auto;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-        #copywriting h2 {
-            font-size: 2.5em;
-            color: #6A3FA0;
-            font-weight: bold;
-            margin-bottom: 30px;
+        /* Contact Section */
+        #contact {
+            background-color: #fff;
         }
-        #copywriting p {
-            font-size: 1.3em;
+        #contact p {
+            font-size: 1.2em;
             max-width: 800px;
             margin: auto;
             line-height: 1.6;
             color: #333;
             font-weight: 300;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-
-        .button-copywriting {
+        .button-contact {
             display: inline-block;
             padding: 14px 28px;
             background-color: #6A3FA0;
@@ -254,15 +245,12 @@
             text-decoration: none;
             border-radius: 25px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 20px;
         }
-
-        .button-copywriting:hover {
+        .button-contact:hover {
             background-color: #502A80;
             transform: translateY(-2px);
         }
-
-        /* Footer Styling */
+        /* Footer */
         footer {
             background-color: #6A3FA0;
             color: white;
@@ -280,11 +268,17 @@
                 font-size: 3em;
             }
             header p {
-                font-size: 1.1em;
+                font-size: 1.2em;
             }
             nav a {
                 font-size: 1em;
                 padding: 8px 16px;
+            }
+            section {
+                padding: 60px 20px;
+            }
+            section h2 {
+                font-size: 2em;
             }
             #about p {
                 font-size: 1.1em;
@@ -293,15 +287,9 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            #contact {
-                margin: 40px 20px;
-                padding: 60px 20px;
-            }
-            #contact h2 {
-                font-size: 2em;
-            }
-            #contact p {
-                font-size: 1em;
+            #copywriting {
+                margin: 20px;
+                padding: 40px 20px;
             }
             #copywriting h2 {
                 font-size: 2em;
@@ -322,7 +310,7 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            .button {
+            .header-button {
                 font-size: 1em;
                 padding: 12px 24px;
             }
@@ -330,7 +318,7 @@
                 font-size: 2em;
             }
             #about p {
-                font-size: 1.1em;
+                font-size: 1em;
             }
             #portfolio h2 {
                 font-size: 2.2em;
@@ -342,51 +330,48 @@
                 font-size: 1em;
             }
             #copywriting {
-                padding: 60px 20px;
-                margin-top: 30px;
+                padding: 30px 20px;
             }
         }
-
     </style>
 </head>
 <body>
     <header>
+        <div class="header-overlay"></div>
         <div class="header-content">
             <h1>Nafi'atunnisa' Personal Space</h1>
             <p>Welcome to my portofolio! Explore my projects and get in touch.</p>
+            <a href="#about" class="header-button">Learn More</a>
         </div>
-        <div class="header-overlay"></div>
     </header>
     <nav>
+        <a href="#">Home</a>
         <a href="#about">About</a>
-        <a href="#portofolio">Portofolio</a>
+        <a href="#portfolio">Portofolio</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
         <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Punya latar belakang Psikologi membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
-        <img src="https://www.pexels.com/photo/white-ceramic-teacup-with-saucer-near-two-books-above-gray-floral-textile-904616/" alt="" />
-        <div class="button-container">
-            <a href="https://wa.link/v0hbok" class="button">Get In Touch With Me</a>
-        </div>
+        <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg" alt="About Me Image" />
     </section>
 
-    <!-- Portofolio section -->
+    <!-- Portfolio section -->
     <section id="portfolio">
         <h2>My Portofolio</h2>
-        <div class="portofolio-grid">
+        <div class="portfolio-grid">
             <div class="portfolio-item">
-                <img src="https://www.pexels.com/photo/close-up-photo-of-gray-typewriter-952594/" alt="" />
+                <img src="https://images.pexels.com/photos/952594/pexels-photo-952594.jpeg" alt="Portfolio 1" />
                 <h3>Jurnalis di Masagipedia</h3>
                 <p>Menulis artikel Berita dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
             </div>
             <div class="portfolio-item">
-                <img src="https://www.pexels.com/photo/person-writing-on-a-notebook-beside-macbook-1766604/" alt="" />
+                <img src="https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg" alt="Portfolio 2" />
                 <h3>Blog Tema Psikologi</h3>
                 <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
             </div>
-            <div class="portofolio-item">
-                <img src="https://www.pexels.com/photo/person-holding-silver-retractable-pen-in-white-ruled-book-796603/" alt="" />
+            <div class="portfolio-item">
+                <img src="https://images.pexels.com/photos/796603/pexels-photo-796603.jpeg" alt="Portfolio 3" />
                 <h3>Artikel SEO - Hariane Jogja</h3>
                 <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Artikel Hariane</a></p>
             </div>
@@ -395,15 +380,17 @@
 
     <!-- Copywriting Section -->
     <section id="copywriting">
-        <h2>Copywriting Services</h2>
-        <p>Saya menawarkan jasa penulisan konten berkualitas, baik itu untuk kebutuhan SEO, artikel blog, hingga penulisan materi pemasaran. Dengan pengalaman dan keterampilan yang saya miliki, saya siap membantu bisnis Anda berkembang melalui tulisan yang menarik dan efektif.</p>
-        <a href="https://wa.link/v0hbok" class="button-copywriting">Get My Services</a>
+        <h2>Jasa Penulisan Artikel SEO</h2>
+        <p>
+            Saya menyediakan jasa penulisan artikel SEO yang ramah mesin pencari dan mudah dipahami. Dengan konten berkualitas, saya membantu meningkatkan visibilitas online Anda. Mari ciptakan konten yang menarik dan berdampak!
+        </p>
+        <a href="https://wa.link/v0hbok" class="button-copywriting">Mulai Kolaborasi</a>
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
         <p>If you are interested to collaborate or need more information about my services, feel free to reach out to me!</p>
-        <a href="https://wa.link/v0hbok">Connect on WhatsApp</a>
+        <a href="https://wa.link/v0hbok" class="button-contact">Connect on WhatsApp</a>
     </section>
 
     <footer>
